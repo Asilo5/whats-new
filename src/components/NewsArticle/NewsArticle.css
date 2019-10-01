@@ -1,0 +1,14 @@
+.news-article {
+  background-color: white;
+  width: 25%;
+  margin: 17px;
+}
+
+.article-button {
+    background: #B56AF0;
+    width: 100%;
+    border: none;
+    padding: 5px;
+    font-size: 20px;
+    color: white;
+  }

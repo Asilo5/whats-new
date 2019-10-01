@@ -1,0 +1,32 @@
+
+
+.menu {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+h1 {
+    color: #EEEEEF;
+    margin: 15px;
+    font-size: 30px;
+}
+
+.new-h1 {
+  color: #FFAE02;
+}
+
+.menu-button {
+    background: transparent;
+    border: none;
+    color: #EEEEEF;
+    font-size: 20px;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 0px 25px 25px 0px;
+}
+
+button:hover {
+  background: #FFAE02;
+}
