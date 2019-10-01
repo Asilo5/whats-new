@@ -17,7 +17,7 @@ class SearchForm extends Component {
           type='text' 
           name='title'
           placeholder='Search for news article here.'
-          value=''
+        //   value=''
         />
         <button className='search-button'> Search Now </button>
       </form>
