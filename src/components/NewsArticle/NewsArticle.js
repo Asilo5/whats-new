@@ -3,10 +3,11 @@ import './NewsArticle.css';
 
 const NewsArticle = () => {
     return (
-        <section>
-            <img />
+        <section className='news-article'>
+            <img src='' alt='' />
             <h2>Hey</h2>
-            <button className='search-button'>Link To Article</button>
+            <p> hey again</p>
+            <button className='article-button'>Link To Article -></button>
         </section>
     )
 }

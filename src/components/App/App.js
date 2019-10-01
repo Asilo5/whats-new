@@ -10,7 +10,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      local
+      local: ''
     }
   }
 
@@ -18,7 +18,7 @@ class App extends Component {
     return (
       <section className="app">
           <Menu />
-          <section>
+          <section className='main-news'>
             <SearchForm />
             <NewsContainer />
           </section>
