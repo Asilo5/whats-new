@@ -8,6 +8,7 @@ import './App.css';
 import Menu from '../Menu/Menu';
 import SearchForm from '../SearchForm/SearchForm';
 import NewsContainer from '../NewsContainer/NewsContainer';
+// import { all } from 'q';
 
 
 class App extends Component {
@@ -20,19 +21,19 @@ class App extends Component {
 
 changeNews = (e, chosenNews) => {
   e.preventDefault();
-  chosenNews = technology;
+
+  // chosenNews = technology;
   this.setState({
     news: chosenNews
   })
 }
 
   render () {
-    console.log(this.state.local);
     return (
       <section className="app">
           <Menu changeNews={this.changeNews} />
           <section className='main-news'>
-            <SearchForm />
+            <SearchForm changeNews={this.changeNews}/>
             <NewsContainer news={this.state.news} />
           </section>
       </section>
