@@ -22,9 +22,23 @@ class App extends Component {
 changeNews = (e, chosenNews) => {
   e.preventDefault();
 
-  // chosenNews = technology;
   this.setState({
     news: chosenNews
+  })
+}
+
+findNews = (e, title) => {
+  e.preventDefault();
+
+  let newState = this.state.news.filter((article) => {
+    let lowerCaseArticle = article.headline.toLowerCase()
+    return lowerCaseArticle.includes(title.toLowerCase())
+  });
+
+  console.log(newState)
+ 
+  this.setState({
+    news: newState
   })
 }
 
@@ -33,7 +47,7 @@ changeNews = (e, chosenNews) => {
       <section className="app">
           <Menu changeNews={this.changeNews} />
           <section className='main-news'>
-            <SearchForm changeNews={this.changeNews}/>
+            <SearchForm changeNews={this.changeNews} findNews={this.findNews} />
             <NewsContainer news={this.state.news} />
           </section>
       </section>
