@@ -1,13 +1,15 @@
 import React from 'react';
 import './NewsArticle.css';
 
-const NewsArticle = () => {
+const NewsArticle = (props) => {
     return (
         <section className='news-article'>
-            <img src='' alt='' />
-            <h2>Hey</h2>
-            <p> hey again</p>
-            <button className='article-button'>Link To Article -></button>
+            <img src={props.article.img} alt={props.article.headline} />
+            <h2>{props.article.headline}</h2>
+            <p>{props.article.description}</p>
+            <button className='article-button'>
+            <a href={props.article.url}>Link To Article -></a>
+            </button>
         </section>
     )
 }

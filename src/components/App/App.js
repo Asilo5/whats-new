@@ -1,26 +1,54 @@
 import React, { Component } from 'react';
 import local from '../../data/local';
+import entertainment from '../../data/entertainment';
+import health from '../../data/health';
+import science from '../../data/science';
+import technology from '../../data/technology';
 import './App.css';
 import Menu from '../Menu/Menu';
 import SearchForm from '../SearchForm/SearchForm';
 import NewsContainer from '../NewsContainer/NewsContainer';
+// import { all } from 'q';
 
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      local: ''
+      news: local
     }
   }
+
+changeNews = (e, chosenNews) => {
+  e.preventDefault();
+
+  this.setState({
+    news: chosenNews
+  })
+}
+
+findNews = (e, title) => {
+  e.preventDefault();
+
+  let newState = this.state.news.filter((article) => {
+    let lowerCaseArticle = article.headline.toLowerCase()
+    return lowerCaseArticle.includes(title.toLowerCase())
+  });
+
+  console.log(newState)
+ 
+  this.setState({
+    news: newState
+  })
+}
 
   render () {
     return (
       <section className="app">
-          <Menu />
+          <Menu changeNews={this.changeNews} />
           <section className='main-news'>
-            <SearchForm />
-            <NewsContainer />
+            <SearchForm changeNews={this.changeNews} findNews={this.findNews} />
+            <NewsContainer news={this.state.news} />
           </section>
       </section>
     );

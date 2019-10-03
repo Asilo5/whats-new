@@ -1,12 +1,27 @@
 import React, { Component } from 'react';
 import './SearchForm.css';
+// import entertainment from '../../data/entertainment';
 
 class SearchForm extends Component {
   constructor() {
     super();
     this.state = {
-        local: ''
+        headline: ''
     }
+  }
+
+  handleChange = (e) => {
+    this.setState({ [e.target.name] : e.target.value })
+  }
+
+  findArticle = (e) => {
+    e.preventDefault();
+
+    this.props.findNews(e, this.state.headline);
+
+    this.setState({
+        headline: ''
+    })
   }
 
   render () {
@@ -15,11 +30,12 @@ class SearchForm extends Component {
         <input 
           className='search-input'
           type='text' 
-          name='title'
+          name='headline'
           placeholder='Search for news article here.'
-          value=''
+          value={this.state.headline}
+          onChange={e => this.handleChange(e)}
         />
-        <button className='search-button'> Search Now </button>
+        <button className='search-button' onClick={this.findArticle}> Search Now </button>
       </form>
     )
   }

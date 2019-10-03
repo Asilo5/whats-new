@@ -1,6 +1,6 @@
 .news-article {
   background-color: white;
-  width: 25%;
+  width: 46%;
   margin: 17px;
 }
 
@@ -11,4 +11,13 @@
     padding: 5px;
     font-size: 20px;
     color: white;
+  }
+
+  h2, p {
+    margin: 10px;
+  }
+
+  img {
+    width: 34em;
+    height: 100px;
   }
