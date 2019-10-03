@@ -35,8 +35,6 @@ findNews = (e, title) => {
     return lowerCaseArticle.includes(title.toLowerCase())
   });
 
-  console.log(newState)
- 
   this.setState({
     news: newState
   })
