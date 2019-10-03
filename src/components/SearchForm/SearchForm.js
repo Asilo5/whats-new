@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './SearchForm.css';
-// import entertainment from '../../data/entertainment';
+
 
 class SearchForm extends Component {
   constructor() {
