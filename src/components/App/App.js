@@ -19,8 +19,7 @@ class App extends Component {
     }
   }
 
-changeNews = (e, chosenNews) => {
-  e.preventDefault();
+changeNews = (chosenNews) => {
 
   this.setState({
     news: chosenNews
