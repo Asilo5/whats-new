@@ -26,8 +26,7 @@ changeNews = (chosenNews) => {
   })
 }
 
-findNews = (e, title) => {
-  e.preventDefault();
+findNews = (title) => {
 
   let newState = this.state.news.filter((article) => {
     let lowerCaseArticle = article.headline.toLowerCase()
