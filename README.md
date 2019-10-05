@@ -13,7 +13,7 @@ Run ``` $ npm install ``` in your terminal
 
 To open the app on your web server run ``` $ npm start ```
 
-## What was used to build Hotel Venezuela
+## What was used to build What's New
 
 What's New was built using:
   - React
