@@ -2,6 +2,9 @@
   background-color: white;
   width: 46%;
   margin: 17px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .article-button {
@@ -19,5 +22,5 @@
 
   img {
     width: 34em;
-    height: 100px;
+    height: 13em;
   }

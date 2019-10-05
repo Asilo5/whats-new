@@ -19,16 +19,14 @@ class App extends Component {
     }
   }
 
-changeNews = (e, chosenNews) => {
-  e.preventDefault();
+changeNews = (chosenNews) => {
 
   this.setState({
     news: chosenNews
   })
 }
 
-findNews = (e, title) => {
-  e.preventDefault();
+findNews = (title) => {
 
   let newState = this.state.news.filter((article) => {
     let lowerCaseArticle = article.headline.toLowerCase()

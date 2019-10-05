@@ -17,7 +17,7 @@ class SearchForm extends Component {
   findArticle = (e) => {
     e.preventDefault();
 
-    this.props.findNews(e, this.state.headline);
+    this.props.findNews(this.state.headline);
 
     this.setState({
         headline: ''
