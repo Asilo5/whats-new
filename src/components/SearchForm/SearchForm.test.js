@@ -28,5 +28,24 @@ describe('SearchForm', () => {
         wrapper.instance().handleChange(mockState);
 
         expect(wrapper.state('title')).toEqual(expected);
+    });
+
+    it('should clear out state', () => {
+      //setup
+
+      let mockState = {
+          headline: 'health'
+      }
+
+      let expected = {
+          headline: ''
+      }
+      //execution
+
+      wrapper.instance().setState(mockState);
+      wrapper.instance().emptyInputs();
+
+      //expectation
+      expect(wrapper.state()).toEqual(expected);
     })
 })

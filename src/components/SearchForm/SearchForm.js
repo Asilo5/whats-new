@@ -18,10 +18,12 @@ class SearchForm extends Component {
     e.preventDefault();
 
     this.props.findNews(this.state.headline);
+  }
 
+  emptyInputs = () => {
     this.setState({
-        headline: ''
-    })
+      headline: ''
+  })
   }
 
   render () {
