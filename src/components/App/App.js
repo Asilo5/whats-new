@@ -1,33 +1,33 @@
 import React, { Component } from 'react';
-import local from '../../data/local';
-import entertainment from '../../data/entertainment';
-import health from '../../data/health';
-import science from '../../data/science';
-import technology from '../../data/technology';
 import './App.css';
+
 import Menu from '../Menu/Menu';
 import SearchForm from '../SearchForm/SearchForm';
 import NewsContainer from '../NewsContainer/NewsContainer';
-// import { all } from 'q';
-
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      news: local
+      allNews: '',
+      news: ''
     }
   }
 
-changeNews = (chosenNews) => {
+componentDidMount = () => {
+  fetch(`https://whats-new-api.herokuapp.com/api/v1/news`)
+  .then(response => response.json())
+  .then(data => this.setState({ allNews: data, news: data.local}))
+  .catch(error => console.log())
+}  
 
+changeNews = (chosenNews) => {
   this.setState({
     news: chosenNews
   })
 }
 
 findNews = (title) => {
-
   let newState = this.state.news.filter((article) => {
     let lowerCaseArticle = article.headline.toLowerCase()
     return lowerCaseArticle.includes(title.toLowerCase())
@@ -41,10 +41,10 @@ findNews = (title) => {
   render () {
     return (
       <section className="app">
-          <Menu changeNews={this.changeNews} />
+          <Menu allNews={this.state.allNews} changeNews={this.changeNews} />
           <section className='main-news'>
             <SearchForm changeNews={this.changeNews} findNews={this.findNews} />
-            <NewsContainer news={this.state.news} />
+            {this.state.news && <NewsContainer news={this.state.news} />}
           </section>
       </section>
     );

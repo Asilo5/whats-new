@@ -5,7 +5,6 @@ import NewsContainer from './NewsContainer';
 describe('NewsContainer',() => {
   it('should return a snapshot with all data passed correctly', () => {
      
-    //setup
     const article = [{
         id: 1,
         headline: 'Spider-Man Will Remain in the Marvel Cinematic Universe',
@@ -14,12 +13,8 @@ describe('NewsContainer',() => {
         url: 'https://www.nytimes.com/2019/09/27/business/media/spiderman-mcu-sony-marvel.html'  
     }]
 
-    // execution
-    const wrapper = shallow( <NewsContainer 
-                        news={article} />)
+    const wrapper = shallow( <NewsContainer news={article} />)
 
-
-   // expectation
    expect(wrapper).toMatchSnapshot();
 
 

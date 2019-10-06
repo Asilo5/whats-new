@@ -16,8 +16,6 @@ describe('SearchForm', () => {
     })
 
     it('should check if state has changed when invoking handleChange',() => {
-        // setup
-
         let mockState = {
             target: {
                 name: 'title',
@@ -27,11 +25,7 @@ describe('SearchForm', () => {
 
         let expected = 'Spidey senses';
 
-        // execution
-
         wrapper.instance().handleChange(mockState);
-
-        // expectation
 
         expect(wrapper.state('title')).toEqual(expected);
     })
