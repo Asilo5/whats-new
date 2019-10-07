@@ -22,4 +22,4 @@ What's New was built using:
   
 ## Giph of What's New
 
-![giph of What's New]()
+![image of What's New app](https://github.com/Asilo5/whats-new/blob/master/Screenshot%202019-10-06%20at%2023.14.25.png)
