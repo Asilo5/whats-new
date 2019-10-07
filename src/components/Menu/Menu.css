@@ -14,19 +14,21 @@ h1 {
 }
 
 .new-h1 {
-  color: #FFAE02;
+  color: #9BB899;
 }
 
 .menu-button {
     background: transparent;
-    border: none;
-    color: #EEEEEF;
+    border: 2px solid #9BB899;
+    color: black;
     font-size: 20px;
     margin: 10px;
     padding: 15px;
-    border-radius: 0px 25px 25px 0px;
+    border-radius: 25px;
+    cursor: pointer;
 }
 
 button:hover {
-  background: #FFAE02;
+  background: #9BB899;
+  color: white;
 }

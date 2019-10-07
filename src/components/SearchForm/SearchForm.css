@@ -1,13 +1,19 @@
-
 .search-button {
-  background: #B56AF0;
+  background-color: transparent;
   font-size: 17px;
   padding: 14px;
-  border: none;
   border-radius: 22px;
   margin: 13px;
-  color: white;
-   width: 10em;
+  color: black;
+  font-weight: bold;
+  width: 10em;
+  border: 2px solid #9BB899;
+  cursor: pointer;
+}
+
+.search-button:hover {
+   background: #9BB899;
+   color: white;
 }
 
 .search-input{
@@ -19,4 +25,8 @@
   background-color: transparent;
   color: white;
   border-bottom: 1px solid gray;
+  }
+
+  .search-input::placeholder {
+    color: white;
   }
