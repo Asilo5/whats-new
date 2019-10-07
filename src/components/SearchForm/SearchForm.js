@@ -16,12 +16,15 @@ class SearchForm extends Component {
 
   findArticle = (e) => {
     e.preventDefault();
+    const { findNews } = this.props;
+    findNews(this.state.headline);
+    this.emptyInputs();
+  }
 
-    this.props.findNews(this.state.headline);
-
+  emptyInputs = () => {
     this.setState({
-        headline: ''
-    })
+      headline: ''
+  })
   }
 
   render () {

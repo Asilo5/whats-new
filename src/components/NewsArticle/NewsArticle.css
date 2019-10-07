@@ -5,15 +5,23 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: 3px 4px 3px #2B1D0C;
+  border-radius: 10px;
+  transition: all .2s ease-in-out;
+}
+
+.news-article:hover {
+  transform: scale(1.1);
 }
 
 .article-button {
-    background: #B56AF0;
+    background: #9BB899;
     width: 100%;
     border: none;
     padding: 5px;
     font-size: 20px;
     color: white;
+    border-radius: 0 0 10px 10px;
   }
 
   h2, p {
@@ -23,4 +31,15 @@
   img {
     width: 34em;
     height: 13em;
+    border-radius: 10px 10px 0 0;
   }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+

@@ -4,11 +4,11 @@ import SearchForm from './SearchForm';
 
 describe('SearchForm', () => {
     let wrapper;
-    const mockIdea = jest.fn();
+    const mockFindArticle = jest.fn();
     const mockHeadline = 'Spider-man'
 
     beforeEach(() => {
-        wrapper = shallow(<SearchForm changeNews={mockIdea} findNews={mockHeadline} />);
+        wrapper = shallow(<SearchForm findNews={mockHeadline} />);
     })
 
     it('should match snapshot',() => {
@@ -16,8 +16,6 @@ describe('SearchForm', () => {
     })
 
     it('should check if state has changed when invoking handleChange',() => {
-        // setup
-
         let mockState = {
             target: {
                 name: 'title',
@@ -27,12 +25,48 @@ describe('SearchForm', () => {
 
         let expected = 'Spidey senses';
 
-        // execution
-
         wrapper.instance().handleChange(mockState);
 
-        // expectation
-
         expect(wrapper.state('title')).toEqual(expected);
+    });
+
+    it('should clear out state', () => {
+      //setup
+
+      let mockState = {
+          headline: 'health'
+      }
+
+      let expected = {
+          headline: ''
+      }
+      //execution
+
+      wrapper.instance().setState(mockState);
+      wrapper.instance().emptyInputs();
+
+      //expectation
+      expect(wrapper.state()).toEqual(expected);
+    });
+
+    it('should invoke both findNews and emptyInputs when findArticle is called',() => {
+
+        const mockEvent = { preventDefault: jest.fn()};
+        wrapper.instance().emptyInputs = jest.fn();
+        const mockHeadline = { headline: 'title'};
+
+        wrapper.instance().findArticle(mockEvent);
+
+        expect(mockFindArticle).toHaveBeenCalledWith(mockHeadline);
+        expect(wrapper.instance().emptyInputs).toHaveBeenCalled();
+    });
+
+    it('should invoke findArticle on click ', () => {
+        wrapper.instance.findArticle = jest.fn();
+        // wrapper.instance.forceUpdate();
+        const mockEvent = { preventDefault: jest.fn() };
+        wrapper.find('button').simulate('click', mockEvent);
+
+        expect(wrapper.instance().findArticle).toHaveBeenCalledWith();
     })
 })
