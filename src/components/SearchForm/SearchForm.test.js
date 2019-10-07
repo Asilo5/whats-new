@@ -4,12 +4,11 @@ import SearchForm from './SearchForm';
 
 describe('SearchForm', () => {
     let wrapper;
-    const mockNews = jest.fn();
-    const mockFindNews = jest.fn();
+    const mockFindArticle = jest.fn();
     const mockHeadline = 'Spider-man'
 
     beforeEach(() => {
-        wrapper = shallow(<SearchForm findNews={mockNews} findNews={mockHeadline} />);
+        wrapper = shallow(<SearchForm findNews={mockHeadline} />);
     })
 
     it('should match snapshot',() => {
@@ -51,25 +50,21 @@ describe('SearchForm', () => {
     });
 
     it('should invoke both findNews and emptyInputs when findArticle is called',() => {
-        //setup
 
         const mockEvent = { preventDefault: jest.fn()};
         wrapper.instance().emptyInputs = jest.fn();
         const mockHeadline = { headline: 'title'};
 
-        //execution
-
         wrapper.instance().findArticle(mockEvent);
-        //expectation
 
-        expect(mockFindNews).toHaveBeenCalledWith(mockHeadline);
+        expect(mockFindArticle).toHaveBeenCalledWith(mockHeadline);
         expect(wrapper.instance().emptyInputs).toHaveBeenCalled();
     });
 
     it('should invoke findArticle on click ', () => {
         wrapper.instance.findArticle = jest.fn();
         // wrapper.instance.forceUpdate();
-        const mockEvent = { preventDefault: jest.fn()};
+        const mockEvent = { preventDefault: jest.fn() };
         wrapper.find('button').simulate('click', mockEvent);
 
         expect(wrapper.instance().findArticle).toHaveBeenCalledWith();

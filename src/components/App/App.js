@@ -43,7 +43,7 @@ findNews = (title) => {
       <section className="app">
           <Menu allNews={this.state.allNews} changeNews={this.changeNews} />
           <section className='main-news'>
-            <SearchForm changeNews={this.changeNews} findNews={this.findNews} />
+            <SearchForm  findNews={this.findNews} />
             {this.state.news && <NewsContainer news={this.state.news} />}
           </section>
       </section>
